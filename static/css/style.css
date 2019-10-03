@@ -1,0 +1,24 @@
+#app {
+  background-image: url('../images/prism.png');
+}
+.scroller {
+  max-height: 600px;
+  overflow-y: auto;
+}
+.hidden {
+  visibility: hidden;
+}
+.animated {
+  animation-duration: 0.5s !important;
+}
+@media only screen and (max-width: 599px) {
+  .scroller {
+    max-height: 140px !important;
+  }
+  .preview {
+    min-height: 200px !important;
+  }
+  .preview-img {
+    max-height: 250px !important;
+  }
+}
