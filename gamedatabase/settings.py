@@ -14,16 +14,17 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8nf#yb%+f(ovnybj^ka)xm=((wbt)4=t3+j0@w0*8v1t)di%+h'
-
+# SECRET_KEY = '8nf#yb%+f(ovnybj^ka)xm=((wbt)4=t3+j0@w0*8v1t)di%+h'
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY', '8nf#yb%+f(ovnybj^ka)xm=((wbt)4=t3+j0@w0*8v1t)di%+h')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'games.apps.GamesConfig',
     'rest_framework',
     'vimage.apps.VimageConfig',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -79,8 +81,8 @@ WSGI_APPLICATION = 'gamedatabase.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gamedatabase',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -128,7 +130,7 @@ USE_TZ = True
 
 STATIC_URL = ('/static/')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 MEDIA_ROOT = (BASE_DIR + '/media/')
@@ -138,5 +140,12 @@ VIMAGE = {
     'games.models': {
         'DIMENSIONS': {'lte': (1920, 1080)},
         'SIZE': {'lte': 2000},
+    }
+}
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': DEBUG,
+        'BUNDLE_DIR_NAME': '/bundles/',  # must end with slash
+        'STATS_FILE': os.path.join(FRONTEND_DIR, 'webpack-stats.json'),
     }
 }

@@ -20,11 +20,15 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from .routers import router
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    #path('', include('games.urls')),
     path('admin/', admin.site.urls),
-    path('', include('games.urls')),
+    # path('', include('games.urls')),
+    path("",
+         TemplateView.as_view(template_name="application.html"),
+         name="app",
+         ),
     path('api/', include(router.urls))
 
 ]

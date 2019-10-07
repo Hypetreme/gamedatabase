@@ -1,5 +1,6 @@
 #app {
   background-image: url('../images/prism.png');
+  background-repeat: repeat !important;
 }
 .scroller {
   max-height: 600px;
