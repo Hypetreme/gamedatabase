@@ -24,8 +24,7 @@ FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend')
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY', '8nf#yb%+f(ovnybj^ka)xm=((wbt)4=t3+j0@w0*8v1t)di%+h')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+DEBUG = True
 ALLOWED_HOSTS = []
 
 
