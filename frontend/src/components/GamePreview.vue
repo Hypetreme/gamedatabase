@@ -30,7 +30,7 @@
       <v-img
         height="520"
         eager
-        :src="description.photo ? description.photo : 'static/null.png'"
+        :src="description.photo ? description.photo : 'static/null.svg'"
         aspect-ration="1.7"
         class="preview-img"
         :class="{'animated fadeIn': classes.isFading, 'not-fading': !classes.isFading }"

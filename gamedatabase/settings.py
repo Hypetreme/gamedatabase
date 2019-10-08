@@ -25,8 +25,7 @@ SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY', '8nf#yb%+f(ovnybj^ka)xm=((wbt)4=t3+j0@w0*8v1t)di%+h')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = [
-    'https://boiling-fjord-77485.herokuapp.com/,127.0.0.1:8000, localhost:8000']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -60,7 +59,8 @@ ROOT_URLCONF = 'gamedatabase.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # 'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(FRONTEND_DIR, 'public')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,13 +129,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(FRONTEND_DIR, 'dist'),
+    os.path.join(FRONTEND_DIR, 'public', 'static'),
+    # os.path.join(BASE_DIR, 'staticfiles'),
 )
 
 MEDIA_ROOT = (BASE_DIR + '/media/')

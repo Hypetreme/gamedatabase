@@ -1,15 +1,10 @@
 const BundleTracker = require("webpack-bundle-tracker");
 const path = require('path');
 module.exports = {
-  publicPath: "/",
-  // assetsRoot: path.resolve(__dirname, '../dist/'),
-  // assetsSubDirectory: '',
-  // assetsPublicPath: '/static/',
-  // devServer: {
-  //   assetsSubDirectory: 'static',
-  //   assetsPublicPath: 'http://localhost:8080/',
-  // },
-  // assetsDir: 'static',
+  publicPath: "https://boiling-fjord-77485.herokuapp.com/",
+  // publicPath: "http://localhost:8080",
+  outputDir: './dist/',
+  assetsDir: 'static',
 
   chainWebpack: config => {
 
