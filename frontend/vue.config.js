@@ -3,6 +3,7 @@ const BundleTracker = require("webpack-bundle-tracker");
 module.exports = {
   baseUrl: "https://boiling-fjord-77485.herokuapp.com:8080/",
   outputDir: './dist/',
+  assetsDir: 'staticfiles',
 
   chainWebpack: config => {
 
