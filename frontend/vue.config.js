@@ -9,7 +9,7 @@ module.exports = {
   //   assetsSubDirectory: 'static',
   //   assetsPublicPath: 'http://localhost:8080/',
   // },
-  // assetsDir: 'static',
+  assetsDir: 'static',
 
   chainWebpack: config => {
 
@@ -24,7 +24,7 @@ module.exports = {
       .set('__STATIC__', 'static')
 
     config.devServer
-      .public('http://zzzz:8080')
+      .public('http://localhost:8080')
       .host('localhost')
       .port(8080)
       .hotOnly(true)
