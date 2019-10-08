@@ -2,7 +2,7 @@ const BundleTracker = require("webpack-bundle-tracker");
 const path = require('path');
 module.exports = {
   publicPath: "https://boiling-fjord-77485.herokuapp.com/",
-  // publicPath: "http://localhost:8080",
+  //publicPath: "http://localhost:8000",
   outputDir: './dist/',
   assetsDir: 'static',
 
@@ -19,9 +19,9 @@ module.exports = {
       .set('__STATIC__', 'static')
 
     config.devServer
-      .public('http://localhost:8080')
+      .public('http://localhost:8000')
       .host('localhost')
-      .port(8080)
+      .port(8000)
       .hotOnly(true)
       .watchOptions({ poll: 1000 })
       .https(false)
