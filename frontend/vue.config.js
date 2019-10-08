@@ -9,7 +9,7 @@ module.exports = {
   //   assetsSubDirectory: 'static',
   //   assetsPublicPath: 'http://localhost:8080/',
   // },
-  assetsDir: 'static',
+  // assetsDir: 'static',
 
   chainWebpack: config => {
 
