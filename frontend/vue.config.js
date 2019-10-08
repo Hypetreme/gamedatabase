@@ -1,9 +1,9 @@
 const BundleTracker = require("webpack-bundle-tracker");
 
 module.exports = {
-  baseUrl: "https://boiling-fjord-77485.herokuapp.com:8080/",
+  publicPath: "https://boiling-fjord-77485.herokuapp.com:8080/",
   outputDir: './dist/',
-  assetsDir: 'staticfiles',
+  assetsDir: 'static',
 
   chainWebpack: config => {
 
@@ -18,12 +18,12 @@ module.exports = {
       .set('__STATIC__', 'static')
 
     config.devServer
-      .public('https://boiling-fjord-77485.herokuapp.com:8080')
-      .host('https://boiling-fjord-77485.herokuapp.com')
+      .public('http://localhost:8080')
+      .host('http://localhost')
       .port(8080)
       .hotOnly(true)
       .watchOptions({ poll: 1000 })
-      .https(false)
+      .https(true)
       .headers({ "Access-Control-Allow-Origin": ["\*"] })
   }
 };
