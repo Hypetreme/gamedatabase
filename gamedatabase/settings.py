@@ -25,7 +25,8 @@ SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY', '8nf#yb%+f(ovnybj^ka)xm=((wbt)4=t3+j0@w0*8v1t)di%+h')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'https://boiling-fjord-77485.herokuapp.com/,127.0.0.1:8000, localhost:8000']
 
 
 # Application definition
