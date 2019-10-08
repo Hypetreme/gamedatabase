@@ -1,7 +1,7 @@
 const BundleTracker = require("webpack-bundle-tracker");
 
 module.exports = {
-  baseUrl: "https://boiling-fjord-77485.herokuapp.com/:8080/",
+  baseUrl: "https://boiling-fjord-77485.herokuapp.com:8080/",
   outputDir: './dist/',
 
   chainWebpack: config => {
@@ -17,8 +17,8 @@ module.exports = {
       .set('__STATIC__', 'static')
 
     config.devServer
-      .public('https://boiling-fjord-77485.herokuapp.com/:8080')
-      .host('https://boiling-fjord-77485.herokuapp.com/')
+      .public('https://boiling-fjord-77485.herokuapp.com:8080')
+      .host('https://boiling-fjord-77485.herokuapp.com')
       .port(8080)
       .hotOnly(true)
       .watchOptions({ poll: 1000 })
