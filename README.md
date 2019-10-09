@@ -2,7 +2,7 @@
 ### WORK IN PROGRESS
 A visual showcase of my retro game collection. Backend is made with Django and frontend is Vue.js. The built version is processed through Django. Hosted in Heroku.
 
-LINK TO SITE: http://pauper.arkku.net/pauperci/
+LINK TO SITE: https://boiling-fjord-77485.herokuapp.com/
 
 ## Built With
 
