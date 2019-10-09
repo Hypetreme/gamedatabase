@@ -14,4 +14,4 @@ LINK TO SITE: http://pauper.arkku.net/pauperci/
 * [Animate.css](https://github.com/daneden/animate.css) - animate.css is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.
 ## Author
 
-* **Janne Karppinen**###
+* **Janne Karppinen**
