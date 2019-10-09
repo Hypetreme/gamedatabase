@@ -3,7 +3,7 @@
   background-repeat: repeat !important;
 }
 .scroller {
-  max-height: 600px;
+  max-height: 580px;
   overflow-y: auto;
 }
 .hidden {

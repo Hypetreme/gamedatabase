@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'games.apps.GamesConfig',
+    # 'games.apps.GamesConfig',
+    'backend.api',
     'rest_framework',
     'vimage.apps.VimageConfig',
     'webpack_loader',
@@ -54,7 +55,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'gamedatabase.urls'
+# ROOT_URLCONF = 'gamedatabase.urls'
+ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'gamedatabase.wsgi.application'
+WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 # Database
@@ -129,7 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(FRONTEND_DIR, 'dist', 'static')
 STATIC_URL = '/static/'
@@ -143,7 +145,7 @@ MEDIA_ROOT = os.path.join(FRONTEND_DIR, 'dist', 'static/upload')
 MEDIA_URL = '/media/'
 
 VIMAGE = {
-    'games.models': {
+    'api.models': {
         'DIMENSIONS': {'lte': (1920, 1080)},
         'SIZE': {'lte': 2000},
     }

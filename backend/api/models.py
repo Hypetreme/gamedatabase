@@ -18,7 +18,7 @@ class Games(models.Model):
     name = models.CharField(max_length=100)
     platform = models.ForeignKey(Platforms, on_delete=models.CASCADE)
     developer = models.CharField(max_length=100)
-    year = models.PositiveIntegerField(default=1980, blank=True,
+    year = models.PositiveIntegerField(default=1990, blank=True,
                                        validators=[
                                            RegexValidator(
                                                regex='^[0-9]{4}$',

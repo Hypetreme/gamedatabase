@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('photo', models.ImageField(blank=True, upload_to='static/covers')),
                 ('added', models.DateTimeField(auto_now=True)),
                 ('platform', models.ForeignKey(
-                    on_delete=django.db.models.deletion.CASCADE, to='games.Platforms')),
+                    on_delete=django.db.models.deletion.CASCADE, to='api.Platforms')),
             ],
         ),
     ]

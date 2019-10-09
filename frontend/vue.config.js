@@ -19,9 +19,9 @@ module.exports = {
       .set('__STATIC__', 'static')
 
     config.devServer
-      .public('http://localhost:8000')
+      .public('http://localhost:8080')
       .host('localhost')
-      .port(8000)
+      .port(8080)
       .hotOnly(true)
       .watchOptions({ poll: 1000 })
       .https(false)
